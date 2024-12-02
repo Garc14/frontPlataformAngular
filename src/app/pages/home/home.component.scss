@@ -1,0 +1,345 @@
+@use "./../../../../public/colors.scss";
+@use '@angular/material' as mat;
+
+
+
+h1 {
+  padding: 0 1rem;
+}
+
+h2 {
+  padding: 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0.3em 0em 0em -0.3em;
+  background-color: colors.$primario;
+  border: none;
+  outline: none;
+  border-radius: 10em;
+  border-bottom-right-radius: 0em;
+  padding-inline: 0.2em;
+  transition: background-color 0.4s ease;
+
+  &:hover {
+    background-color: colors.$secundario; 
+    box-shadow: 0.03em 0.03em 0.13em colors.$sombra-5;
+  }
+
+  &.no-hover {
+    &:hover {
+      background-color: colors.$primario;
+      box-shadow: none;
+    }
+  }
+}
+
+.user:hover {
+  background-color: colors.$secundario; // Color de fondo al pasar el mouse
+  box-shadow: 0.03em 0.03em 0.13em colors.$sombra-5;
+}
+
+.user-popup {
+  position: absolute;
+  top: 4em;
+  left: 4.8em;
+  background-color: colors.$primario;
+  color: colors.$blanco;
+  width: 14em;
+  border-radius: 0em 0em 1.5em 1.5em;
+  border: 0.20em solid colors.$secundario;
+  box-shadow: 0.0625em 0.0625em 0.21875em (0, 0, 0, 0.3), colors.$sombra-5;
+  padding: 0.1em;
+  padding-left: 0.5em;
+  text-align: left;
+  line-height: 0.2em;
+  z-index: 1000;
+}
+
+.user-inf {
+  position: relative;
+  line-height: 0.2em;
+  top: 0.4em;
+  left: 0.8em;
+}
+
+
+.desplazar {
+  display: flex;
+  margin: 0.3em 0em 0em -0.7em;
+}
+
+
+.desplazamiento {
+  display: flex;
+  margin: 0em 0em 0em 1em;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$primario;
+  border: none;
+  outline: none;
+  color: colors.$blanco;
+
+  transition: transform 0.4s ease, background-color 0.3s ease;
+  cursor: pointer;
+  position: relative; 
+
+  &.expanded {
+    transform: translateX(5em);
+  }
+  
+}
+
+#rallitas {
+  font-size: x-large;
+}
+
+.config {
+  position: absolute;
+  font-size: 1.5em;
+  top: 1em; 
+  right: 1em;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  color: colors.$blanco;
+
+  #bconfig {
+    font-size: 0.7em;
+  }
+  
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: colors.$blanco;
+  top: 4em;
+  right: 1em;
+  box-shadow: 0.0625em 0.0625em 0.21875em colors.$sombra-5;
+}
+
+.dropdown-config {
+  display: flex;
+  align-items: center;
+  padding: 0.6em;
+  cursor: pointer;
+  color: colors.$negro;
+  background-color: colors.$blanco;
+  border: none;
+}
+
+.dropdown-config:hover {
+  background-color: colors.$gris-azul60;
+}
+
+.menu-style {
+  background-color: colors.$blanco;
+  top: 1em; 
+  right: 1em;
+}
+
+
+.nubeFooter {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-left: 0.5em;
+}
+
+.tituloNube {
+  color: colors.$blanco;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-bottom: 0.4em;
+}
+
+mat-toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: colors.$primario; 
+  color: colors.$blanco;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+}
+
+///////////////
+
+mat-sidenav {
+  padding-top: 8rem;
+  max-width: 250px;
+  background-color: colors.$primario; 
+
+  @media screen and (min-width: 600px) {
+    padding-top: 4rem;
+  }
+
+  .entry {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 0.5rem 0.5rem 0.4rem;
+    font-size: 1rem; /* Tamaño de fuente para las entradas del menú */
+    color: colors.$blanco;
+    background-color: colors.$primario;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-item-casa {
+    position: relative;
+    
+    &:hover {
+      padding-bottom: 0; 
+    }
+
+.house-popup {
+  position: fixed;
+  top: 8.5em;
+  left: 8em;
+  transform: translateX(-50%) translateY(10px);
+  background-color: colors.$secundario;
+  color: colors.$blanco;
+  padding: 1px;
+  font-size: 10px;
+  width: 5em;
+  height: 2em; 
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  border: 0cap;
+}
+}
+
+
+.nube-popup {
+    background-color: colors.$primario;
+    padding: 0em 0em 0em 0.3em;
+    box-shadow: 0px 4px 8px colors.$negro(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    min-width: 12em;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform: translateY(-10px);
+
+    button[mat-menu-item] {
+      background: colors.$primario;
+      color: colors.$blanco;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
+      font-size: 14px;
+      border: 0cap;
+
+      &:hover, &.activo {
+        background-color: lighten(colors.$primario, 10%);
+      }
+    }
+
+    &.collapsed {
+      position: absolute;
+      top: 2em;
+      left: 0.1em;
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    &.expanded {
+      position: fixed;
+      top: 9.5em;
+      left: 4.5em;
+      visibility: visible;
+      opacity: 1;
+    }  
+  }
+
+
+.nav-item-escudo {
+  position: relative;  
+
+  &:hover {
+    padding-bottom: 20em; 
+  }
+
+.shield-popup {
+  background-color: colors.$primario;
+  padding: 0em 0em 0em 0.3em;
+  box-shadow: 0px 4px 8px colors.$negro(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  min-width: 12em;
+  z-index: 1000;
+
+
+  &.collapsed {
+    position: absolute;
+    top: 3.5em;
+    left: 0.2em;
+  }
+
+  &.expanded {
+    position: fixed;
+    top: 14em;
+    left: 4.5em;
+  }
+
+    button[mat-menu-item] {
+      background: colors.$primario;
+      color: colors.$blanco;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      width: 100%;
+      justify-content: flex-start;
+      text-align: left;
+      font-size: 14px;
+      border: none;
+
+      &:hover, &.activo {
+        background-color: lighten(colors.$primario, 10%);
+      }
+    }
+  }
+  }
+}
+
+ .nav-item:hover .shield-popup {
+   visibility: visible;
+   opacity: 1;
+ }
+
+///////////////
+
+mat-nav-list {
+  flex-grow: 1;
+  }
+
+
+mat-sidenav-content {
+  padding-top: 3.5rem;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 4rem;
+  }
+
+  .content {
+    padding: 1rem;
+    font-size: 1.2rem; 
+  }
+}

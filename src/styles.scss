@@ -1,0 +1,33 @@
+
+body{
+  margin:0;
+  padding: 0;
+}
+@font-face
+{
+  font-family: "Regular-Title";
+  src: url("./app/fonts/RobotoFlex-Regular.ttf");
+}
+@font-face
+{
+  font-family: "iconos";
+  src: url("./app/fonts/fa-solid.ttf");
+}
+
+*{
+  font-family: "Regular-Title";
+}
+
+.iconos{
+  font-family: "iconos";
+}
+
+@font-face
+{
+  font-family: "iconos2";
+  src: url("./app/fonts/icomoon2.ttf");
+}
+
+.iconos2{
+  font-family: "iconos2";
+}

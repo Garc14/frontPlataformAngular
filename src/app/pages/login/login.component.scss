@@ -1,0 +1,230 @@
+@use "./../../../../public/colors.scss";
+
+
+/* General container */
+.container {
+  background: linear-gradient(0deg, colors.$primario 0%, colors.$auxiliar 100%);
+  padding: 0;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  /* Subcontainers for login and recovery */
+  .container-2,
+  .login-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-recovery {
+    background-color: colors.$white;
+    text-align: center;
+    height: 27rem;
+    width: 22rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 20px;
+  }
+
+  .login-box {
+    background-image: url(/);
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    height: 30rem;
+    width: 42rem;
+  }
+  
+  h2 {
+    font-size: 1em;
+    font-weight: 900;
+    color: colors.$primario;
+    text-align: center;
+  }
+
+  .instruction {
+    font-weight: 900;
+    width: 80%;
+  }
+
+  /* Logo styles */
+
+  .logo {
+    width: 260px;
+    height: 141px;
+    margin-top: 29px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    
+
+  }
+
+  .logoW {
+    width: 15em;
+    margin: 0em 10em 0.5em 1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+   
+  }
+
+  .logoP {
+    width: 30em;
+    padding-right:25em;
+  }
+
+  /* Input styles */
+  .input-group {
+    width: 15em;
+    position: relative;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  .input-forgot {
+    align-items: center;
+    width: 90%;
+    position: relative;
+    margin: 0px 0px 30px 5px;
+    display: block;
+  }
+
+  .input-background {
+    background-color: colors.$plata;
+    width: 100%;
+    padding: 10px;
+    padding-left: 30px;
+    font-size: 16px;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    &:focus {
+      border-color: colors.$blue-1;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    color: colors.$primario-claro-3;
+    font-size: 16px;
+    transition: 0.2s ease-in-out;
+    pointer-events: none;
+    margin-bottom: 5px;
+
+  }
+
+  #icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: colors.$icon-color;
+    font-size: 16px;
+    transition: 0.2s ease-in-out;
+    pointer-events: none;
+    margin-bottom: 5px;
+  }
+
+  .input-background:focus + label,
+  .input-background:not(:placeholder-shown) {
+    top: -11px;
+    left: 10px;
+    font-size: 12px;
+  }
+
+  /* Buttons */
+  .login-button{
+    background-color: colors.$secundario;
+    color: colors.$primario;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 20px;
+    width: 70%;
+    height: 10%;
+  }
+  .login-button:hover{
+    box-shadow: 0 2px 2px  colors.$gris-azul60, 0 3px 1px colors.$gris-azul60, 0 1px 5px colors.$gris-azul60;
+  }
+
+  .submit-btn {
+    background-color: colors.$blue-2;
+    color: colors.$white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px 20px;
+    width: 80%;
+    height: 40%;
+  }
+
+  .submit-btn:hover {
+    background-color: colors.$blue-1;
+  }
+
+  .forgot-password {
+    color: colors.$primario;
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  /* Back button */
+  .back-button {
+    background-color: colors.$white;
+    color: colors.$white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    top: -0.3em;
+    left: -10.0em;
+    position: relative;
+
+    button {
+      background-color: colors.$blue-2;
+      border: none;
+      width: 2.8em;
+      height: 2.8em;
+      margin-top: -0.2em;
+      margin-left: -0.3em;
+      color: colors.$white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  /* Footer styles */
+  footer {
+    width: 100%;
+    background-color: colors.$white;
+    text-align: center;
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+
+    .content-logo {
+      
+      display: flex;
+      height: 40%;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+  }
+}

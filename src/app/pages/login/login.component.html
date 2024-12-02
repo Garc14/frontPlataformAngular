@@ -1,0 +1,49 @@
+<div class="container"  >
+    <div *ngIf="isLoginMode" class="login-container" >
+        <!-- HTML del login -->
+        <div class="login-box" >
+            <img src="" alt="" class="" />
+            <h2>Bienvenido</h2>
+            <form class="input-group" (ngSubmit)="login()">
+                <div class="input-group">
+                    <input class="input-background" id="username" [(ngModel)]="email" name="email" type="text" required />
+                    <label for="username">Usuario</label>
+                    <label class="iconos" id = "icon" ></label>
+                </div>
+                <div class="input-group">
+                    <input class="input-background" id="password" [(ngModel)]="password" name="password" type="password" required />
+                    <label for="password">Contraseña</label>
+                    <label class="iconos" id = "icon" ></label>
+                </div>
+                <a class="forgot-password" (click)="toggleMode()">¿Restablecer contraseña?</a>
+                <button type="submit" class="login-button">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="!isLoginMode" class="container-recovery"  >
+        <!-- HTML de recuperación de contraseña -->
+        <div class="back-button">
+            <button (click)="toggleMode()">
+                <span class="iconos"></span>
+            </button>
+        </div>
+        <img src="" alt="" class="" />
+        <p class="instruction">Ingrese correo de usuario para recuperar la contraseña</p>
+        <form class="input-forgot" (ngSubmit)="recoverPassword()">
+            <div class="input-forgot">
+                <input class="input-background" id="username" [(ngModel)]="email" name="email" type="text" required />
+                <label for="username">Correo</label>
+                <label class="iconos" id = "icon" ></label>
+            </div>
+            <button type="submit" class="submit-btn">Enviar correo de recuperación</button>
+        </form>
+    </div>
+
+    <footer>
+        <img src="" alt="" class="" />
+        <div class="content-logo">
+            <img src="" alt="" class="" />
+        </div>
+    </footer>
+</div>
